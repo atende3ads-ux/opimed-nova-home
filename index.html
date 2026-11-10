@@ -1,0 +1,1010 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Nova Home Opimed</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Opimed Aparelhos Auditivos: avaliação com fonoaudiólogo, Widex, Signia e ReSound e acompanhamento contínuo em 18 unidades. Desde 1989.">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Montserrat:wght@400;500;600&display=swap">
+<style>
+/* Layout: estrutura de clínica (referência Housecall). Seções brancas e separadas, títulos em peso médio
+   com duas cores, cards de borda fina, botões pílula com círculo de seta, faixa clara antes do rodapé grafite.
+   Visual único (claro) por escolha: é o site institucional da marca. */
+:root{
+  color-scheme: light;
+  --bg:#FFFFFF;
+  --tint:#F5F2EE;
+  --tint-2:#EDE8E2;
+  --ink:#252021;
+  --ink-2:#5C5552;
+  --ink-3:#8F8682;
+  --line:#E5E0DB;
+  --night:#252021;
+  --night-2:#332D2E;
+  --on-night:#FFFFFF;
+  --on-night-2:rgba(255,255,255,.72);
+  --on-night-3:rgba(255,255,255,.5);
+  --line-night:rgba(255,255,255,.14);
+  --amber:#F4B744;
+  --amber-soft:#FBEACB;
+  --amber-ink:#7A5414;
+  --whats:#25D366;
+  --whats-ink:#06331A;
+  --focus:#F4B744;
+
+  --f-display:"Montserrat", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --f-body:"Figtree", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  --wrap:1328px;
+  --gut:max(20px, env(safe-area-inset-left, 0px));
+  --gut-r:max(20px, env(safe-area-inset-right, 0px));
+  --r-lg:20px; --r-md:14px; --r-sm:10px; --pill:999px;
+  --header-h:72px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 16px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink-2);font-family:var(--f-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit}
+h1,h2,h3,h4,p,figure,blockquote{margin:0}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:8px}
+::selection{background:var(--amber-soft)}
+svg.i{width:18px;height:18px;flex:none}
+
+.wrap{width:100%;max-width:calc(var(--wrap) + 40px);margin-inline:auto;padding-left:var(--gut);padding-right:var(--gut-r)}
+.sec{padding-block:clamp(72px,8vw,120px)}
+
+/* ---------- Tipografia ---------- */
+.eyebrow{display:inline-flex;align-items:center;gap:8px;align-self:start;justify-self:start;padding:5px 12px 5px 8px;border-radius:var(--pill);border:1px solid var(--line);font-size:.8rem;font-weight:500;color:var(--ink)}
+.eyebrow::before{content:"";width:12px;height:12px;border-radius:50%;border:3px solid var(--ink);box-shadow:inset 0 0 0 2px var(--bg);background:var(--ink)}
+.h1{font-family:var(--f-display);font-weight:400;font-size:clamp(2.6rem,5vw,4.5rem);line-height:1.1;letter-spacing:-.035em;color:#fff;text-wrap:balance}
+.h2{font-family:var(--f-display);font-weight:400;font-size:clamp(2rem,3.4vw,3rem);line-height:1.16;letter-spacing:-.032em;color:var(--ink-3);text-wrap:balance}
+.h2 .hl{color:var(--ink)}
+.h3{font-family:var(--f-display);font-weight:500;font-size:1.4rem;line-height:1.3;letter-spacing:-.02em;color:var(--ink)}
+.h4{font-family:var(--f-display);font-weight:500;font-size:1.05rem;line-height:1.35;letter-spacing:-.01em;color:var(--ink)}
+.cap{font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.sec-head{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);align-items:end;gap:20px 64px;margin-bottom:clamp(36px,4vw,56px)}
+.sec-head .stack{display:grid;gap:18px}
+.sec-head > p{max-width:44ch;justify-self:end}
+.sec-head.ruled{padding-bottom:clamp(28px,3vw,40px);border-bottom:1px solid var(--line)}
+
+/* ---------- Botões ---------- */
+.btn{display:inline-flex;align-items:center;gap:12px;min-height:48px;padding:0 5px 0 20px;border-radius:var(--pill);border:1px solid transparent;font-weight:500;font-size:.95rem;text-decoration:none;cursor:pointer;white-space:nowrap;transition:background .2s,color .2s,border-color .2s}
+.btn .dot{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;flex:none;transition:transform .25s var(--ease)}
+.btn .dot svg{width:16px;height:16px}
+.btn:hover .dot{transform:translateX(2px)}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink .dot{background:#fff;color:var(--ink)}
+.btn-ink:hover{background:#000}
+.btn-white{background:#fff;color:var(--ink);border-color:var(--line)}
+.btn-white .dot{background:var(--ink);color:#fff}
+.btn-white:hover{border-color:var(--ink)}
+.btn-ghost{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.35)}
+.btn-ghost .dot{background:#fff;color:var(--ink)}
+.btn-ghost:hover{background:rgba(255,255,255,.22)}
+.btn-text{display:inline-flex;align-items:center;gap:8px;min-height:48px;font-weight:500;font-size:.95rem;color:var(--ink);text-decoration:none}
+.btn-text:hover{text-decoration:underline}
+.btn-sm{min-height:40px;font-size:.88rem;padding-left:16px;padding-right:4px}
+.btn-sm .dot{width:32px;height:32px}
+
+/* ---------- Barra de aviso + header ---------- */
+.notice-bar{background:var(--tint);font-size:.82rem;color:var(--ink)}
+.notice-bar .wrap{display:flex;justify-content:center;align-items:center;gap:28px;min-height:40px;flex-wrap:wrap}
+.notice-bar span{display:inline-flex;align-items:center;gap:8px}
+.notice-bar svg{width:15px;height:15px;color:var(--ink-3)}
+.notice-bar b{font-weight:600}
+.notice-bar .sep{width:1px;height:14px;background:var(--line)}
+.header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:#fff;border-bottom:1px solid transparent;transition:border-color .2s}
+.header.scrolled{border-bottom-color:var(--line)}
+.header .wrap{display:flex;align-items:center;gap:32px;height:var(--header-h)}
+.brand img{height:40px;width:auto}
+.nav{display:flex;gap:6px;margin-inline:auto}
+.nav a{padding:8px 12px;border-radius:var(--pill);font-size:.92rem;font-weight:500;text-decoration:none;color:var(--ink)}
+.nav a:hover{background:var(--tint)}
+.header-cta{display:flex;align-items:center;gap:20px}
+.header-cta .tel{display:inline-flex;align-items:center;gap:8px;font-size:.92rem;font-weight:500;text-decoration:none;color:var(--ink);font-variant-numeric:tabular-nums}
+.header-cta .tel svg{width:16px;height:16px;color:var(--ink-3)}
+.menu-btn{display:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:#fff;cursor:pointer;align-items:center;justify-content:center}
+.menu-btn span{display:block;width:18px;height:1.6px;background:var(--ink);position:relative}
+.menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0;width:18px;height:1.6px;background:var(--ink);transition:transform .25s}
+.menu-btn span::before{top:-6px}.menu-btn span::after{top:6px}
+.menu-open .menu-btn span{background:transparent}
+.menu-open .menu-btn span::before{transform:translateY(6px) rotate(45deg)}
+.menu-open .menu-btn span::after{transform:translateY(-6px) rotate(-45deg)}
+.drawer{display:none}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;min-height:clamp(560px,46vw,700px);display:flex;align-items:flex-end;background:var(--night);overflow:hidden}
+.hero > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 40%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(37,32,33,.88) 0%,rgba(37,32,33,.55) 42%,rgba(37,32,33,.05) 75%),linear-gradient(0deg,rgba(37,32,33,.55) 0%,rgba(37,32,33,0) 40%)}
+.hero .wrap{position:relative;z-index:2;padding-block:clamp(48px,6vw,88px)}
+.hero-body{display:grid;gap:22px;max-width:640px}
+.hero-body p{font-size:1.12rem;color:rgba(255,255,255,.86);max-width:46ch}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+
+.ticker{background:var(--amber);color:var(--ink);overflow:hidden;border-bottom:1px solid rgba(0,0,0,.04)}
+.ticker-track{display:flex;width:max-content;animation:roll 50s linear infinite}
+.ticker ul{display:flex;align-items:center;gap:40px;margin:0;padding:15px 20px;list-style:none;font-size:.95rem;font-weight:500;white-space:nowrap}
+.ticker li{display:flex;align-items:center;gap:40px}
+.ticker li::after{content:"+";font-weight:400;opacity:.6}
+@keyframes roll{to{transform:translateX(-50%)}}
+
+/* ---------- Formas de atendimento ---------- */
+.ways{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.25fr);gap:24px;align-items:stretch}
+.ways-photo{position:relative;border-radius:var(--r-lg);overflow:hidden;min-height:520px;background:var(--tint)}
+.ways-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ways-photo .tag{position:absolute;left:20px;right:20px;bottom:20px;display:grid;grid-template-columns:auto 1fr;gap:4px 16px;align-items:center;background:#fff;border-radius:var(--r-md);padding:16px 18px;box-shadow:0 12px 30px -16px rgba(37,32,33,.4)}
+.ways-photo .tag i{grid-row:span 2;width:44px;height:44px;border-radius:var(--r-sm);background:var(--tint);display:grid;place-items:center;color:var(--ink)}
+.ways-photo .tag b{font-family:var(--f-display);font-weight:500;color:var(--ink)}
+.ways-photo .tag span{font-size:.88rem}
+.tickets{display:grid;gap:16px}
+.ticket{display:grid;grid-template-columns:190px minmax(0,1fr);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:#fff}
+.ticket-side{background:var(--tint);padding:22px;display:grid;gap:6px;align-content:start;border-right:1px dashed var(--line)}
+.ticket-side i{width:36px;height:36px;border-radius:var(--r-sm);background:#fff;display:grid;place-items:center;color:var(--ink);margin-bottom:8px}
+.ticket-side b{font-family:var(--f-display);font-weight:500;font-size:1.6rem;letter-spacing:-.03em;color:var(--ink);line-height:1.1}
+.ticket-side span{font-size:.82rem}
+.ticket-main{padding:22px 26px;display:grid;gap:10px;align-content:start}
+.ticket-title{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
+.ticket-title .h3{font-size:1.35rem;margin-right:4px}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:var(--pill);background:var(--tint);font-size:.78rem;font-weight:500;color:var(--ink)}
+.pill::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--ink-3)}
+.pill.ok::before{background:#3E9B5B}
+.ticket-main a{justify-self:start;margin-top:2px;font-weight:500;color:var(--ink);font-size:.92rem}
+
+/* ---------- Tipos de aparelho (abas) ---------- */
+.treat{display:grid;grid-template-columns:220px minmax(0,1fr) minmax(0,1.1fr);gap:clamp(24px,4vw,56px);align-items:start}
+.treat-tabs{display:grid;gap:8px}
+.treat-tabs .cap{margin-bottom:6px;text-transform:none;letter-spacing:0;font-size:.85rem;font-weight:500;color:var(--ink)}
+.t-tab{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;min-height:42px;padding:0 16px;border-radius:var(--pill);border:1px solid var(--line);background:#fff;text-align:left;cursor:pointer;font-size:.9rem;font-weight:500;color:var(--ink);transition:background .2s,border-color .2s,color .2s}
+.t-tab small{font-size:.72rem;letter-spacing:.06em;color:var(--ink-3)}
+.t-tab:hover{border-color:var(--ink)}
+.t-tab[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.t-tab[aria-selected="true"] small{color:var(--amber)}
+.treat-pane{display:contents}
+.treat-text{display:grid;gap:16px;align-content:start}
+.treat-text .h3{font-size:1.5rem}
+.checks{margin:6px 0 0;padding:0;list-style:none;display:grid;border-top:1px solid var(--line)}
+.checks li{display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid var(--line);color:var(--ink)}
+.checks li::before{content:"";flex:none;width:18px;height:18px;border-radius:50%;background:var(--tint-2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='8' viewBox='0 0 10 8'%3E%3Cpath d='M1 4l2.6 2.6L9 1' fill='none' stroke='%23252021' stroke-width='1.6'/%3E%3C/svg%3E") center no-repeat}
+.treat-text .btn-text{margin-top:4px}
+.treat-img{border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/3;background:var(--tint);max-width:100%}
+.treat-img img{width:100%;height:100%;object-fit:cover}
+.treat-img.contain{background:#fff;border:1px solid var(--line)}
+.treat-img.contain img{object-fit:contain;padding:28px}
+
+/* ---------- Modelos (cards tipo profissionais) ---------- */
+.models{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.model{display:grid;gap:14px;text-decoration:none}
+.model figure{position:relative;border-radius:var(--r-lg);background:var(--tint);aspect-ratio:1/1.05;overflow:hidden;max-width:100%}
+.model figure img{position:absolute;inset:14%;width:72%;height:72%;object-fit:contain;mix-blend-mode:multiply;transition:transform .5s var(--ease)}
+.model:hover figure img{transform:scale(1.04)}
+.model .status{position:absolute;left:12px;bottom:12px;display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:var(--pill);background:#fff;font-size:.76rem;font-weight:500;color:var(--ink)}
+.model .status::before{content:"";width:6px;height:6px;border-radius:50%;background:#3E9B5B}
+.model .h4{font-size:1.12rem}
+.model-sub{font-size:.88rem;margin-top:-8px}
+.meta{margin:0;padding:12px 0 0;list-style:none;display:grid;gap:8px;border-top:1px solid var(--line);font-size:.86rem}
+.meta li{display:flex;align-items:center;gap:10px}
+.meta svg{width:15px;height:15px;color:var(--ink-3)}
+.center{display:flex;justify-content:center;margin-top:44px}
+
+/* ---------- Marcas (carrossel) ---------- */
+.car-nav{display:flex;gap:8px;justify-self:end}
+.car-btn{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--ink);display:grid;place-items:center;cursor:pointer;transition:background .2s,color .2s,opacity .2s}
+.car-btn.next{background:var(--ink);color:#fff;border-color:var(--ink)}
+.car-btn:disabled{opacity:.35;cursor:default}
+.car-btn svg{width:16px;height:16px}
+.car-btn.prev svg{transform:rotate(180deg)}
+.carousel{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 40px) / 2.6);gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none}
+.carousel::-webkit-scrollbar{display:none}
+.brand-card{scroll-snap-align:start;display:grid;grid-template-rows:auto 1fr;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:#fff;min-width:0}
+.brand-card figure{position:relative;aspect-ratio:16/9;background:var(--tint);max-width:100%}
+.brand-card figure img{position:absolute;inset:12%;width:76%;height:76%;object-fit:contain;mix-blend-mode:multiply}
+.brand-body{padding:24px;display:grid;gap:14px;align-content:start}
+.brand-row{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:50px}
+.brand-row img{height:24px;width:auto;filter:brightness(0)}
+.brand-row span{font-size:.82rem;color:var(--ink-3)}
+.brand-body p{color:var(--ink-2)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{padding:4px 10px;border-radius:var(--pill);background:var(--tint);font-size:.78rem;font-weight:500;color:var(--ink)}
+.brand-body a{justify-self:start;font-weight:500;color:var(--ink);font-size:.92rem}
+
+/* ---------- Unidades (cards tipo clínicas) ---------- */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.filter{min-height:38px;padding:0 14px;border-radius:var(--pill);border:1px solid var(--line);background:#fff;font-size:.86rem;font-weight:500;color:var(--ink);cursor:pointer}
+.filter:hover{border-color:var(--ink)}
+.filter[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.filter small{opacity:.6;margin-left:4px}
+.clinics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.clinic{display:grid;grid-template-rows:auto 1fr;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:#fff}
+.clinic-top{background:var(--night);color:#fff;padding:20px 22px;display:grid;grid-template-columns:auto 1fr;gap:2px 14px;align-items:center}
+.clinic-top i{grid-row:span 2;width:40px;height:40px;display:grid;place-items:center}
+.clinic-top i img{width:40px;height:40px}
+.clinic-top small{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--on-night-3)}
+.clinic-top b{font-family:var(--f-display);font-weight:500;font-size:1.2rem;letter-spacing:-.02em}
+.clinic-body{padding:20px 22px 22px;display:grid;gap:12px;align-content:start}
+.clinic-body ul{margin:0;padding:0;list-style:none;display:grid;gap:10px;font-size:.9rem}
+.clinic-body li{display:flex;gap:10px}
+.clinic-body li svg{width:16px;height:16px;margin-top:3px;color:var(--ink-3);flex:none}
+.clinic-actions{display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px;margin-top:6px}
+.more{display:flex;justify-content:center;margin-top:32px}
+
+/* ---------- Acompanhamento (tipo convênios) ---------- */
+.cover{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:24px;align-items:start}
+.cover-left{display:grid;gap:28px}
+.cover-left .stack{display:grid;gap:18px}
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.tile{display:flex;align-items:center;gap:12px;padding:16px;border:1px solid var(--line);border-radius:var(--r-md);font-size:.92rem;font-weight:500;color:var(--ink)}
+.tile svg{width:20px;height:20px;flex:none}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.two .h4{margin-bottom:4px}
+.two p{font-size:.9rem}
+.helper{background:var(--tint);border-radius:var(--r-lg);padding:24px;display:grid;gap:18px}
+.helper-head{display:flex;align-items:center;gap:14px}
+.helper-head img{width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:40% 20%}
+.helper-head b{display:block;font-family:var(--f-display);font-weight:500;color:var(--ink)}
+.helper-head span{font-size:.85rem}
+.helper-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;font-size:.86rem}
+.helper-steps svg{width:18px;height:18px;color:var(--ink);margin-bottom:6px}
+.side-card{border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:#fff;position:sticky;top:calc(var(--header-h) + 24px)}
+.side-head{background:var(--tint);padding:22px 26px}
+.side-head .h3{margin-top:4px}
+.rows{margin:0;padding:8px 26px;list-style:none}
+.rows li{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);color:var(--ink)}
+.rows li:last-child{border-bottom:0}
+.rows li span{display:flex;align-items:center;gap:12px}
+.rows li em{font-style:normal;width:24px;height:24px;border-radius:50%;background:var(--tint);display:grid;place-items:center;font-size:.75rem;font-weight:600}
+.rows li small{font-size:.8rem;color:var(--ink-3)}
+.included{padding:18px 26px;border-top:1px solid var(--line);display:grid;gap:10px}
+.included ul{margin:0;padding:0;list-style:none;display:grid;gap:8px;font-size:.9rem}
+.included li{display:flex;gap:10px;align-items:center}
+.included li svg{width:16px;height:16px;color:#3E9B5B}
+.side-foot{padding:18px 26px 24px;border-top:1px solid var(--line);display:grid;gap:14px;font-size:.84rem}
+.side-foot .btn{justify-self:start}
+
+/* ---------- Avaliações ---------- */
+.reviews{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.review{border:1px solid var(--line);border-radius:var(--r-lg);padding:26px;display:grid;gap:18px;align-content:space-between;background:#fff}
+.stars{display:flex;gap:3px;color:var(--amber)}
+.stars svg{width:15px;height:15px}
+.review blockquote{font-size:1.02rem;color:var(--ink);line-height:1.55}
+.review figcaption b{display:block;font-weight:600;color:var(--ink);font-size:.92rem}
+.review figcaption span{font-size:.82rem}
+
+/* ---------- FAQ ---------- */
+.faq{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.4fr);gap:clamp(32px,5vw,80px);align-items:start}
+.faq-left{display:grid;gap:20px}
+.contact-card{border:1px solid var(--line);border-radius:var(--r-lg);padding:22px;display:grid;gap:14px;margin-top:8px}
+.contact-head{display:flex;align-items:center;gap:14px}
+.contact-head i{width:48px;height:48px;border-radius:50%;background:var(--tint);display:grid;place-items:center;color:var(--ink)}
+.contact-head b{display:block;font-family:var(--f-display);font-weight:500;color:var(--ink)}
+.contact-head span{font-size:.85rem}
+.contact-card p{font-size:.9rem}
+.contact-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px}
+.faq-tabs{display:flex;flex-wrap:wrap;gap:6px;padding:5px;border:1px solid var(--line);border-radius:var(--pill);justify-self:start;margin-bottom:20px}
+.f-tab{min-height:36px;padding:0 16px;border-radius:var(--pill);border:0;background:transparent;font-size:.88rem;font-weight:500;color:var(--ink);cursor:pointer}
+.f-tab[aria-selected="true"]{background:var(--ink);color:#fff}
+.faq-right{display:grid}
+.qa{border-bottom:1px solid var(--line)}
+.qa:first-child{border-top:1px solid var(--line)}
+.qa summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px 0;cursor:pointer;font-family:var(--f-display);font-weight:500;font-size:1.02rem;color:var(--ink)}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary i{flex:none;width:30px;height:30px;border-radius:50%;background:var(--tint);display:grid;place-items:center;transition:transform .3s var(--ease),background .2s,color .2s}
+.qa summary i svg{width:13px;height:13px}
+.qa[open] summary i{transform:rotate(45deg);background:var(--ink);color:#fff}
+.qa p{padding:0 48px 22px 0;max-width:62ch}
+
+/* ---------- Faixa de agendamento ---------- */
+.book{background:var(--tint)}
+.book-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:center}
+.book-left{display:grid;gap:20px}
+.book-left .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.fine{display:flex;align-items:center;gap:8px;font-size:.84rem}
+.fine svg{width:15px;height:15px}
+.appt{display:grid;grid-template-columns:200px minmax(0,1fr);border-radius:var(--r-lg);overflow:hidden;background:#fff;box-shadow:0 24px 50px -30px rgba(37,32,33,.45)}
+.appt-side{background:var(--night);color:#fff;padding:24px;display:grid;align-content:space-between;gap:24px}
+.appt-side i{width:40px;height:40px;border-radius:var(--r-sm);border:1px solid var(--line-night);display:grid;place-items:center}
+.appt-side small{display:block;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--on-night-3);margin-bottom:4px}
+.appt-side b{font-family:var(--f-display);font-weight:500;font-size:1.1rem}
+.appt-side .code{padding-top:18px;border-top:1px dashed var(--line-night)}
+.form{padding:26px;display:grid;gap:14px}
+.form .cap{margin-bottom:2px}
+.field{display:grid;gap:6px}
+.field label{font-size:.82rem;font-weight:500;color:var(--ink)}
+.field input,.field select{width:100%;min-height:48px;padding:0 14px;border-radius:var(--r-sm);border:1px solid var(--line);background:#fff;font-size:1rem;color:var(--ink);appearance:none;-webkit-appearance:none}
+.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23252021' stroke-width='1.6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px}
+.field input:focus,.field select:focus{outline:none;border-color:var(--ink)}
+.field [aria-invalid="true"]{border-color:#C2412D}
+.form .btn{justify-self:start;margin-top:4px}
+.form .legal{font-size:.75rem;color:var(--ink-3)}
+.form-ok{display:grid;gap:10px;padding:12px 0}
+.form-ok i{width:48px;height:48px;border-radius:50%;background:var(--amber);display:grid;place-items:center;color:var(--ink)}
+
+/* ---------- Footer ---------- */
+.footer{background:var(--night);color:var(--on-night-2);padding-block:clamp(56px,6vw,80px) 28px}
+.foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;padding-bottom:44px;border-bottom:1px solid var(--line-night)}
+.foot-top img{height:44px;width:auto;filter:invert(1);margin-bottom:22px}
+.foot-top p{font-family:var(--f-display);font-weight:400;font-size:clamp(1.2rem,2vw,1.6rem);line-height:1.35;letter-spacing:-.02em;color:#fff;max-width:30ch}
+.foot-grid{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(4,minmax(0,1fr));gap:32px;padding-block:44px}
+.foot-col h4{font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--on-night-3);margin:0 0 16px}
+.foot-col ul{margin:0;padding:0;list-style:none;display:grid;gap:10px;font-size:.9rem}
+.foot-col a{text-decoration:none}
+.foot-col a:hover{color:#fff;text-decoration:underline}
+.foot-col li{display:flex;gap:10px;align-items:flex-start}
+.foot-col li svg{width:15px;height:15px;margin-top:4px;flex:none;color:var(--on-night-3)}
+.foot-note{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;padding:14px 18px;border-radius:var(--r-md);background:var(--amber-soft);color:var(--amber-ink);font-size:.84rem}
+.foot-note span{display:inline-flex;align-items:center;gap:8px}
+.foot-note svg{width:15px;height:15px}
+.foot-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;margin-top:24px;font-size:.8rem;color:var(--on-night-3)}
+.foot-bottom nav{display:flex;flex-wrap:wrap;gap:18px}
+.foot-bottom a{text-decoration:none}
+.foot-bottom a:hover{color:#fff}
+
+/* ---------- WhatsApp ---------- */
+.whats{position:fixed;z-index:70;right:calc(20px + env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;height:58px;padding:0 16px;border-radius:var(--pill);background:var(--whats);color:var(--whats-ink);text-decoration:none;box-shadow:0 14px 30px -10px rgba(6,51,26,.55);font-weight:600;font-size:.92rem;transition:gap .3s var(--ease),padding .3s var(--ease)}
+.whats svg{width:26px;height:26px;flex:none}
+.whats span{max-width:0;overflow:hidden;white-space:nowrap;transition:max-width .35s var(--ease)}
+.whats:hover,.whats:focus-visible{gap:10px;padding-right:22px}
+.whats:hover span,.whats:focus-visible span{max-width:200px}
+
+/* ---------- Responsivo ---------- */
+@media (max-width:1180px){
+  .nav a{padding:8px 9px;font-size:.88rem}
+  .header-cta .tel{display:none}
+  .treat{grid-template-columns:200px minmax(0,1fr)}
+  .treat-img{grid-column:2}
+  .models{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .clinics{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cover{grid-template-columns:minmax(0,1fr)}
+  .side-card{position:static}
+  .foot-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .foot-grid .foot-col:first-child{grid-column:1/-1}
+}
+@media (max-width:980px){
+  :root{--header-h:64px}
+  .notice-bar .hide-sm{display:none}
+  .notice-bar .sep{display:none}
+  .nav,.header-cta .btn{display:none}
+  .menu-btn{display:inline-flex}
+  .header-cta{margin-left:auto}
+  .brand img{height:34px}
+  .drawer{display:grid;position:fixed;inset:calc(var(--header-h) + env(safe-area-inset-top,0px)) 0 auto;z-index:49;background:#fff;padding:8px var(--gut-r) 24px var(--gut);gap:2px;border-bottom:1px solid var(--line);opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .2s,transform .2s,visibility 0s .2s}
+  .menu-open .drawer{opacity:1;visibility:visible;transform:none;transition:opacity .2s,transform .2s}
+  .drawer a{padding:14px 2px;font-size:1.05rem;font-weight:500;text-decoration:none;color:var(--ink);border-bottom:1px solid var(--line)}
+  .drawer .btn{margin-top:14px;justify-self:start;border-bottom:0;color:#fff}
+  .sec-head,.ways,.book-grid,.faq{grid-template-columns:minmax(0,1fr)}
+  .sec-head > p{justify-self:start}
+  .ways-photo{min-height:380px}
+  .treat{grid-template-columns:minmax(0,1fr)}
+  .treat-tabs{display:flex;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-inline:calc(var(--gut) * -1);padding-inline:var(--gut)}
+  .treat-tabs::-webkit-scrollbar{display:none}
+  .treat-tabs .cap{display:none}
+  .t-tab{flex:none;width:auto;gap:8px}
+  .treat-img{grid-column:auto;order:-1}
+  .treat-pane{display:grid;gap:24px}
+  .carousel{grid-auto-columns:calc((100% - 20px) / 1.4)}
+  .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .reviews{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:640px){
+  .notice-bar .wrap{gap:12px;font-size:.78rem;padding-block:8px}
+  .hero{min-height:0;flex-direction:column;align-items:stretch;justify-content:flex-end;padding-top:280px}
+  .hero > img{height:60%;object-position:76% 20%}
+  .hero::after{background:linear-gradient(180deg,rgba(37,32,33,0) 0%,rgba(37,32,33,.25) 30%,rgba(37,32,33,.94) 55%,var(--night) 100%)}
+  .hero-actions .btn{flex:1 1 100%;justify-content:space-between}
+  .ticket{grid-template-columns:minmax(0,1fr)}
+  .ticket-side{border-right:0;border-bottom:1px dashed var(--line);grid-template-columns:auto 1fr;align-items:center;gap:2px 14px}
+  .ticket-side i{grid-row:span 2;margin:0}
+  .models{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .model .meta{display:none}
+  .carousel{grid-auto-columns:86%}
+  .clinics{grid-template-columns:minmax(0,1fr)}
+  .tiles,.two,.helper-steps{grid-template-columns:minmax(0,1fr)}
+  .appt{grid-template-columns:minmax(0,1fr)}
+  .appt-side{grid-template-columns:auto 1fr;align-items:center}
+  .appt-side .code{display:none}
+  .qa p{padding-right:0}
+  .foot-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .whats{height:54px;padding:0 14px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z" fill="currentColor"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 3.5h3l1.5 4-2 1.4a11 11 0 0 0 6 6l1.4-2 4 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+  <symbol id="i-ear" viewBox="0 0 24 24"><path d="M7 9a5 5 0 0 1 10 0c0 3-3 3.5-3 6.5a3 3 0 0 1-5.6 1.5M10 9.5a2 2 0 0 1 4 0c0 1.2-1 1.6-1.5 2.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.5 6.5a4 4 0 0 0 5 5L12 19a2.1 2.1 0 0 1-3-3l7.5-7.5zM14.5 6.5l3-3 3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5.5c0 4.5-3 8-7 9.5-4-1.5-7-5-7-9.5V6z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-cycle" viewBox="0 0 24 24"><path d="M4.5 12a7.5 7.5 0 0 1 13-5.1M19.5 12a7.5 7.5 0 0 1-13 5.1M17.5 3v4h-4M6.5 21v-4h4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="4" y="5.5" width="16" height="14.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M4 10h16M8.5 3.5v4M15.5 3.5v4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="i-screen" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M9 20h6M12 16.5V20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4.5 6.5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H10l-4.5 3.5v-3.5h0a1 1 0 0 1-1-1z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><rect x="3.5" y="7.5" width="15" height="9" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M21 10.5v3M9.5 9.5l-1.5 3h3l-1.5 3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-bt" viewBox="0 0 24 24"><path d="M7 7.5l10 9-5 4v-17l5 4-10 9" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 11v5M12 7.8v.4" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3.5 12.2V4.5a1 1 0 0 1 1-1h7.7l8.3 8.3a1 1 0 0 1 0 1.4l-7.3 7.3a1 1 0 0 1-1.4 0z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="8" cy="8" r="1.4" fill="currentColor"/></symbol>
+  <symbol id="i-head" viewBox="0 0 24 24"><path d="M4.5 14v-2a7.5 7.5 0 0 1 15 0v2M4.5 14a2 2 0 0 1 2-2h1v6h-1a2 2 0 0 1-2-2zM19.5 14a2 2 0 0 0-2-2h-1v6h1a2 2 0 0 0 2-2zM16.5 18c0 1.5-1.5 2.5-4.5 2.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.9 2c0 1.2.9 2.4 1 2.5.1.2 1.7 2.6 4.2 3.7 1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.5-.5z" fill="currentColor"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4a21 21 0 0 0-2.3-.1c-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21z" fill="currentColor"/></symbol>
+</svg>
+
+<div class="notice-bar">
+  <div class="wrap">
+    <span><svg><use href="#i-tag"/></svg><b>Black Opimed:</b> compre 1 aparelho e ganhe outro</span>
+    <span class="sep hide-sm"></span>
+    <span class="hide-sm"><svg><use href="#i-ear"/></svg>Teste o aparelho antes de decidir</span>
+    <span class="sep hide-sm"></span>
+    <span class="hide-sm"><svg><use href="#i-phone"/></svg>Ligação gratuita 0800 100 1989</span>
+  </div>
+</div>
+
+<header class="header" id="topo">
+  <div class="wrap">
+    <a class="brand" href="#topo" aria-label="Opimed, início"><img src="img/logo-opimed.png" alt="Opimed, desde 1989" width="80" height="40"></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#tipos">Aparelhos</a>
+      <a href="#marcas">Marcas</a>
+      <a href="#unidades">Unidades</a>
+      <a href="#acompanhamento">Acompanhamento</a>
+      <a href="#duvidas">Dúvidas</a>
+    </nav>
+    <div class="header-cta">
+      <a class="tel" href="tel:08001001989"><svg><use href="#i-phone"/></svg>0800 100 1989</a>
+      <a class="btn btn-ink btn-sm" href="#agendar">Agendar avaliação <span class="dot"><svg><use href="#i-arrow"/></svg></span></a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Abrir menu"><span></span></button>
+    </div>
+  </div>
+  <div class="drawer" id="drawer">
+    <a href="#tipos">Aparelhos</a>
+    <a href="#marcas">Marcas</a>
+    <a href="#unidades">Unidades</a>
+    <a href="#acompanhamento">Acompanhamento</a>
+    <a href="#duvidas">Dúvidas</a>
+    <a href="tel:08001001989">0800 100 1989</a>
+    <a class="btn btn-ink" href="#agendar">Agendar avaliação <span class="dot"><svg><use href="#i-arrow"/></svg></span></a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <img src="img/hero-casal.webp" alt="Casal de idosos dançando e sorrindo na sala de casa" width="1920" height="1002" fetchpriority="high">
+    <div class="wrap">
+      <div class="hero-body">
+        <h1 class="h1" id="hero-title">Ouça o melhor da vida</h1>
+        <p>Fonoaudiólogos certificados, aparelhos Widex, Signia e ReSound e 18 unidades em 8 estados e no DF. Você testa o aparelho antes de decidir.</p>
+        <div class="hero-actions">
+          <a class="btn btn-white" href="#agendar">Agendar avaliação <span class="dot"><svg><use href="#i-arrow"/></svg></span></a>
+          <a class="btn btn-ghost" href="#formas">Fazer o teste online <span class="dot"><svg><use href="#i-arrow"/></svg></span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <ul><li>Desde 1989</li><li>Mais de 102 mil aparelhos adaptados</li><li>Garantia Premium de até 5 anos</li><li>Laboratório e assistência técnica próprios</li><li>Teste antes de decidir</li><li>18 unidades</li></ul>
+      <ul><li>Desde 1989</li><li>Mais de 102 mil aparelhos adaptados</li><li>Garantia Premium de até 5 anos</li><li>Laboratório e assistência técnica próprios</li><li>Teste antes de decidir</li><li>18 unidades</li></ul>
+    </div>
+  </div>
+
+  <!-- FORMAS DE ATENDIMENTO -->
+  <section class="sec wrap" id="formas" aria-labelledby="formas-title">
+    <div class="sec-head">
+      <div class="stack">
+        <span class="eyebrow">Como começar</span>
+        <h2 class="h2" id="formas-title"><span class="hl">Na unidade,</span> por telefone ou online</h2>
+      </div>
+      <p>A avaliação com fonoaudiólogo é o primeiro passo. Se preferir, comece pelo teste online ou tire suas dúvidas por telefone.</p>
+    </div>
+    <div class="ways">
+      <div class="ways-photo">
+        <img src="img/atendimento.webp" alt="Fonoaudióloga da Opimed atendendo uma paciente" loading="lazy" width="1200" height="896">
+        <div class="tag"><i><svg class="i"><use href="#i-ear"/></svg></i><b>Atendimento com fonoaudiólogo</b><span>Equipe treinada pela Widex, Signia e ReSound.</span></div>
+      </div>
+      <div class="tickets">
+        <article class="ticket">
+          <div class="ticket-side"><i><svg class="i"><use href="#i-cal"/></svg></i><span class="cap">Na unidade</span><b>Avaliação</b><span>em 18 unidades</span></div>
+          <div class="ticket-main">
+            <div class="ticket-title"><h3 class="h3">Avaliação auditiva</h3><span class="pill ok">Com fonoaudiólogo</span><span class="pill">Orçamento personalizado</span></div>
+            <p>Exames de audição, indicação do aparelho para a sua rotina e teste antes de decidir.</p>
+            <a href="#agendar">Agendar avaliação</a>
+          </div>
+        </article>
+        <article class="ticket">
+          <div class="ticket-side"><i><svg class="i"><use href="#i-screen"/></svg></i><span class="cap">Online</span><b>Teste</b><span>feito de casa</span></div>
+          <div class="ticket-main">
+            <div class="ticket-title"><h3 class="h3">Teste auditivo online</h3><span class="pill">Orientação inicial</span></div>
+            <p>Responda algumas perguntas e veja se é hora de procurar um fonoaudiólogo.</p>
+            <a href="#agendar">Fazer o teste</a>
+          </div>
+        </article>
+        <article class="ticket">
+          <div class="ticket-side"><i><svg class="i"><use href="#i-phone"/></svg></i><span class="cap">Por telefone</span><b>0800</b><span>100 1989</span></div>
+          <div class="ticket-main">
+            <div class="ticket-title"><h3 class="h3">Ligação gratuita</h3><span class="pill ok">WhatsApp também</span></div>
+            <p>Tire dúvidas sobre aparelhos, manutenção e agende sem sair de casa.</p>
+            <a href="tel:08001001989">Ligar agora</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIPOS DE APARELHO -->
+  <section class="wrap" id="tipos" aria-labelledby="tipos-title" style="padding-bottom:clamp(72px,8vw,120px)">
+    <div class="sec-head ruled">
+      <div class="stack">
+        <span class="eyebrow">Tipos de aparelho</span>
+        <h2 class="h2" id="tipos-title"><span class="hl">Qual aparelho</span> é para você?</h2>
+      </div>
+      <p>O fonoaudiólogo indica o formato depois do exame. Veja o que muda entre eles.</p>
+    </div>
+    <div class="treat">
+      <div class="treat-tabs" role="tablist" aria-label="Tipos de aparelho">
+        <span class="cap">Formato</span>
+        <button class="t-tab" type="button" role="tab" id="tt-ric" aria-controls="tp-ric" aria-selected="true">Receptor no canal <small>RIC</small></button>
+        <button class="t-tab" type="button" role="tab" id="tt-cic" aria-controls="tp-cic" aria-selected="false" tabindex="-1">Microcanal <small>CIC</small></button>
+        <button class="t-tab" type="button" role="tab" id="tt-itc" aria-controls="tp-itc" aria-selected="false" tabindex="-1">Intracanal <small>ITC</small></button>
+        <button class="t-tab" type="button" role="tab" id="tt-bte" aria-controls="tp-bte" aria-selected="false" tabindex="-1">Retroauricular <small>BTE</small></button>
+      </div>
+      <div class="treat-pane" role="tabpanel" id="tp-ric" aria-labelledby="tt-ric">
+        <div class="treat-text">
+          <h3 class="h3">Receptor no canal</h3>
+          <p>O formato mais usado hoje. Fica atrás da orelha e leva o som direto para dentro do canal.</p>
+          <ul class="checks"><li>Discreto e confortável</li><li>Versões recarregáveis e com Bluetooth</li><li>Perdas leves a severas</li></ul>
+          <a class="btn-text" href="#modelos">Ver modelos RIC <svg class="i"><use href="#i-arrow"/></svg></a>
+        </div>
+        <figure class="treat-img"><img src="img/formato-ric.webp" alt="Aparelho receptor no canal posicionado na orelha" loading="lazy" width="704" height="350"></figure>
+      </div>
+      <div class="treat-pane" role="tabpanel" id="tp-cic" aria-labelledby="tt-cic" hidden>
+        <div class="treat-text">
+          <h3 class="h3">Microcanal</h3>
+          <p>Fica todo dentro do canal auditivo. Quase ninguém percebe que você está usando.</p>
+          <ul class="checks"><li>O mais discreto de todos</li><li>Aproveita o formato natural da orelha</li><li>Perdas leves a moderadas</li></ul>
+          <a class="btn-text" href="#modelos">Ver modelos CIC <svg class="i"><use href="#i-arrow"/></svg></a>
+        </div>
+        <figure class="treat-img contain"><img src="img/signia-silk-ix.png" alt="Par de aparelhos microcanal Signia Silk" loading="lazy" width="800" height="800"></figure>
+      </div>
+      <div class="treat-pane" role="tabpanel" id="tp-itc" aria-labelledby="tt-itc" hidden>
+        <div class="treat-text">
+          <h3 class="h3">Intracanal</h3>
+          <p>Feito sob medida a partir do molde do seu ouvido. Ocupa a entrada do canal.</p>
+          <ul class="checks"><li>Personalizado para o seu ouvido</li><li>Fácil de colocar e tirar</li><li>Perdas leves a moderadas</li></ul>
+          <a class="btn-text" href="#modelos">Ver modelos ITC <svg class="i"><use href="#i-arrow"/></svg></a>
+        </div>
+        <figure class="treat-img"><img src="img/formato-itc.webp" alt="Aparelho intracanal na entrada do canal auditivo" loading="lazy" width="706" height="350"></figure>
+      </div>
+      <div class="treat-pane" role="tabpanel" id="tp-bte" aria-labelledby="tt-bte" hidden>
+        <div class="treat-text">
+          <h3 class="h3">Retroauricular</h3>
+          <p>Fica atrás da orelha e tem mais potência. Também é indicado para crianças.</p>
+          <ul class="checks"><li>Mais potência e bateria</li><li>Botões maiores, fáceis de usar</li><li>Perdas moderadas a profundas</li></ul>
+          <a class="btn-text" href="#modelos">Ver modelos BTE <svg class="i"><use href="#i-arrow"/></svg></a>
+        </div>
+        <figure class="treat-img"><img src="img/formato-bte.webp" alt="Aparelho retroauricular atrás da orelha" loading="lazy" width="704" height="350"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODELOS -->
+  <section class="wrap" id="modelos" aria-labelledby="modelos-title" style="padding-bottom:clamp(72px,8vw,120px)">
+    <div class="sec-head">
+      <div class="stack">
+        <span class="eyebrow">Modelos</span>
+        <h2 class="h2" id="modelos-title"><span class="hl">Modelos em destaque.</span> Todos com teste antes da compra.</h2>
+      </div>
+      <p>Cada card mostra marca, formato e recursos, para você chegar na avaliação já sabendo o que perguntar.</p>
+    </div>
+    <div class="models">
+      <a class="model" href="#agendar">
+        <figure><img src="img/signia-silk-ix.png" alt="Signia Silk Charge&amp;Go IX" loading="lazy" width="800" height="800"><span class="status">Recarregável</span></figure>
+        <h3 class="h4">Silk Charge&amp;Go IX</h3>
+        <p class="model-sub">Signia · Microcanal</p>
+        <ul class="meta"><li><svg><use href="#i-eye"/></svg>Quase invisível</li><li><svg><use href="#i-bolt"/></svg>Carrega no estojo</li></ul>
+      </a>
+      <a class="model" href="#agendar">
+        <figure><img src="img/signia-pure-bct-ix.webp" alt="Signia Pure Charge&amp;Go BCT IX" loading="lazy" width="1000" height="1000"><span class="status">Recarregável</span></figure>
+        <h3 class="h4">Pure Charge&amp;Go BCT IX</h3>
+        <p class="model-sub">Signia · Receptor no canal</p>
+        <ul class="meta"><li><svg><use href="#i-bt"/></svg>Chamadas e música</li><li><svg><use href="#i-bolt"/></svg>Bateria para o dia todo</li></ul>
+      </a>
+      <a class="model" href="#agendar">
+        <figure><img src="img/resound-nexia.webp" alt="ReSound Nexia" loading="lazy" width="1024" height="1024"><span class="status">Recarregável</span></figure>
+        <h3 class="h4">ReSound Nexia</h3>
+        <p class="model-sub">ReSound · Receptor no canal</p>
+        <ul class="meta"><li><svg><use href="#i-eye"/></svg>O menor da linha Nexia</li><li><svg><use href="#i-bt"/></svg>Ajustes pelo app</li></ul>
+      </a>
+      <a class="model" href="#agendar">
+        <figure><img src="img/widex-allure.webp" alt="Widex Allure" loading="lazy" width="1100" height="980"><span class="status">Recarregável</span></figure>
+        <h3 class="h4">Widex Allure</h3>
+        <p class="model-sub">Widex · Receptor no canal</p>
+        <ul class="meta"><li><svg><use href="#i-ear"/></svg>Som natural Widex</li><li><svg><use href="#i-bolt"/></svg>Leve para o dia inteiro</li></ul>
+      </a>
+    </div>
+    <div class="center"><a class="btn btn-white" href="#modelos">Ver todos os aparelhos <span class="dot"><svg><use href="#i-arrow"/></svg></span></a></div>
+  </section>
+
+  <!-- MARCAS -->
+  <section class="wrap" id="marcas" aria-labelledby="marcas-title" style="padding-bottom:clamp(72px,8vw,120px)">
+    <div class="sec-head">
+      <div class="stack">
+        <span class="eyebrow">Marcas</span>
+        <h2 class="h2" id="marcas-title"><span class="hl">Widex, Signia e ReSound.</span> Uma equipe certificada nas três.</h2>
+      </div>
+      <div class="car-nav">
+        <button class="car-btn prev" type="button" aria-label="Marca anterior" aria-controls="brand-car"><svg><use href="#i-arrow"/></svg></button>
+        <button class="car-btn next" type="button" aria-label="Próxima marca" aria-controls="brand-car"><svg><use href="#i-arrow"/></svg></button>
+      </div>
+    </div>
+    <div class="carousel" id="brand-car" tabindex="0" aria-label="Marcas de aparelhos auditivos">
+      <article class="brand-card">
+        <figure><img src="img/widex-allure.webp" alt="Aparelho Widex Allure" loading="lazy" width="1100" height="980"></figure>
+        <div class="brand-body">
+          <div class="brand-row"><img src="img/logo-widex.png" alt="Widex" width="180" height="90" style="height:28px"><span>Dinamarca</span></div>
+          <p>Conhecida pelo som natural, mais próximo do que o ouvido escuta sem aparelho.</p>
+          <div class="chips"><span class="chip">Moment</span><span class="chip">Allure</span><span class="chip">SmartRIC</span></div>
+          <a href="#modelos">Ver aparelhos Widex</a>
+        </div>
+      </article>
+      <article class="brand-card">
+        <figure><img src="img/signia-pure-bct-ix.webp" alt="Aparelho Signia Pure Charge&amp;Go BCT IX" loading="lazy" width="1000" height="1000"></figure>
+        <div class="brand-body">
+          <div class="brand-row"><img src="img/logo-signia.png" alt="Signia" width="180" height="90" style="height:34px"><span>Alemanha</span></div>
+          <p>Linha ampla de recarregáveis, do microcanal ao receptor no canal com Bluetooth.</p>
+          <div class="chips"><span class="chip">Pure Charge&amp;Go</span><span class="chip">Silk</span><span class="chip">Styletto</span><span class="chip">Active Pro</span></div>
+          <a href="#modelos">Ver aparelhos Signia</a>
+        </div>
+      </article>
+      <article class="brand-card">
+        <figure><img src="img/resound-nexia.webp" alt="Aparelho ReSound Nexia" loading="lazy" width="1024" height="1024"></figure>
+        <div class="brand-body">
+          <div class="brand-row"><img src="img/logo-resound.png" alt="ReSound" width="180" height="90" style="height:50px"><span>Dinamarca</span></div>
+          <p>Pioneira em aparelhos conectados ao celular, com ajustes direto pelo app.</p>
+          <div class="chips"><span class="chip">Nexia</span><span class="chip">Omnia</span></div>
+          <a href="#modelos">Ver aparelhos ReSound</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- UNIDADES -->
+  <section class="wrap" id="unidades" aria-labelledby="unidades-title" style="padding-bottom:clamp(72px,8vw,120px)">
+    <div class="sec-head">
+      <div class="stack">
+        <span class="eyebrow">Unidades</span>
+        <h2 class="h2" id="unidades-title"><span class="hl">18 unidades,</span> em 8 estados e no Distrito Federal</h2>
+      </div>
+      <p>Todas fazem avaliação auditiva, adaptação e manutenção. Escolha o estado para ver as mais perto de você.</p>
+    </div>
+    <div class="filters" role="group" aria-label="Filtrar unidades por estado" id="filters"></div>
+    <div class="clinics" id="units"></div>
+    <div class="more"><button class="btn btn-white" type="button" id="more-units">Ver todas as unidades <span class="dot"><svg><use href="#i-plus"/></svg></span></button></div>
+  </section>
+
+  <!-- ACOMPANHAMENTO -->
+  <section class="wrap" id="acompanhamento" aria-labelledby="acomp-title" style="padding-bottom:clamp(72px,8vw,120px)">
+    <div class="cover">
+      <div class="cover-left">
+        <div class="stack">
+          <span class="eyebrow">Acompanhamento</span>
+          <h2 class="h2" id="acomp-title"><span class="hl">A gente continua</span> com você depois da compra</h2>
+          <p>Revisões, limpeza, ajustes e reparos ficam com a mesma equipe que fez a sua adaptação.</p>
+        </div>
+        <div class="tiles">
+          <div class="tile"><svg><use href="#i-shield"/></svg>Garantia Premium de até 5 anos</div>
+          <div class="tile"><svg><use href="#i-tool"/></svg>Laboratório próprio</div>
+          <div class="tile"><svg><use href="#i-ear"/></svg>Fonoaudiólogos certificados</div>
+          <div class="tile"><svg><use href="#i-cal"/></svg>Revisões periódicas</div>
+          <div class="tile"><svg><use href="#i-cycle"/></svg>Troca Inteligente</div>
+          <div class="tile"><svg><use href="#i-head"/></svg>Suporte por WhatsApp</div>
+        </div>
+        <div class="two">
+          <div><h3 class="h4">Já usa aparelho?</h3><p>Fazemos limpeza, ajustes e reparos no seu aparelho.</p></div>
+          <div><h3 class="h4">Quer um modelo mais novo?</h3><p>Com a Troca Inteligente, você troca o seu por uma tecnologia atual.</p></div>
+        </div>
+        <div class="helper">
+          <div class="helper-head"><img src="img/atendimento.webp" alt="" width="1200" height="896" loading="lazy"><div><b>Suporte Opimed</b><span>Atendimento para quem já é cliente</span></div></div>
+          <div class="helper-steps">
+            <div><svg><use href="#i-chat"/></svg><p>Conte o que está acontecendo pelo WhatsApp</p></div>
+            <div><svg><use href="#i-cal"/></svg><p>A unidade agenda o melhor horário para você</p></div>
+            <div><svg><use href="#i-tool"/></svg><p>O ajuste ou reparo é feito pela nossa equipe</p></div>
+          </div>
+          <a class="btn btn-ink btn-sm" href="https://tintim.link/whatsapp/7c349cb9-c7e6-42a9-8469-b6271b6bdefa/bfc37a4d-e9c0-4161-89c0-4ad689308140" target="_blank" rel="noopener" style="justify-self:start">Falar com o suporte <span class="dot"><svg><use href="#i-arrow"/></svg></span></a>
+        </div>
+      </div>
+      <aside class="side-card" aria-labelledby="como-title">
+        <div class="side-head"><span class="cap">Como funciona</span><h3 class="h3" id="como-title">Da avaliação ao dia a dia</h3></div>
+        <ol class="rows">
+          <li><span><em>1</em>Exame com fonoaudiólogo</span><small>Na unidade</small></li>
+          <li><span><em>2</em>Teste antes de decidir</span><small>No seu dia a dia</small></li>
+          <li><span><em>3</em>Ajuste sob medida</span><small>Na unidade</small></li>
+          <li><span><em>4</em>Revisões e garantia</span><small>Sempre que precisar</small></li>
+        </ol>
+        <div class="included">
+          <span class="cap">Incluso na adaptação</span>
+          <ul>
+            <li><svg><use href="#i-check"/></svg>Programação do aparelho para o seu exame</li>
+            <li><svg><use href="#i-check"/></svg>Orientação de uso, limpeza e carregamento</li>
+            <li><svg><use href="#i-check"/></svg>Acompanhamento com a mesma equipe</li>
+          </ul>
+        </div>
+        <div class="side-foot">
+          <p>O prazo da Garantia Premium varia conforme o modelo escolhido.</p>
+          <a class="btn btn-white btn-sm" href="#agendar">Agendar avaliação <span class="dot"><svg><use href="#i-arrow"/></svg></span></a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- AVALIAÇÕES -->
+  <section class="wrap" aria-labelledby="dep-title" style="padding-bottom:clamp(72px,8vw,120px)">
+    <div class="sec-head">
+      <div class="stack">
+        <span class="eyebrow">Avaliações no Google</span>
+        <h2 class="h2" id="dep-title"><span class="hl">O que dizem</span> nossos pacientes</h2>
+      </div>
+    </div>
+    <div class="reviews">
+      <figure class="review">
+        <div class="stars" aria-label="5 de 5 estrelas"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+        <blockquote>"O atendimento da recepção é excelente e o atendimento do fonoaudiólogo José Henrique é incrível. Ele é muito atencioso, delicado e cuidadoso."</blockquote>
+        <figcaption><b>Celeste M.</b><span>Paciente, avaliação no Google</span></figcaption>
+      </figure>
+      <figure class="review">
+        <div class="stars" aria-label="5 de 5 estrelas"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+        <blockquote>"Tanto a Jessica quanto a Vanessa são muito cordiais."</blockquote>
+        <figcaption><b>Anna C.</b><span>Paciente, avaliação no Google</span></figcaption>
+      </figure>
+      <figure class="review">
+        <div class="stars" aria-label="5 de 5 estrelas"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+        <blockquote>"Muito simpática e profissional."</blockquote>
+        <figcaption><b>Eloy B.</b><span>Paciente, avaliação no Google</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- DÚVIDAS -->
+  <section class="wrap" id="duvidas" aria-labelledby="faq-title" style="padding-bottom:clamp(72px,8vw,120px)">
+    <div class="faq">
+      <div class="faq-left">
+        <span class="eyebrow">Dúvidas</span>
+        <h2 class="h2" id="faq-title"><span class="hl">Tem alguma dúvida?</span> A gente ajuda.</h2>
+        <p>As perguntas que mais chegam nas nossas unidades.</p>
+        <div class="contact-card">
+          <div class="contact-head"><i><svg class="i"><use href="#i-head"/></svg></i><div><b>Central Opimed</b><span>Ligação gratuita e WhatsApp</span></div></div>
+          <p>Não achou sua resposta? Fale com um especialista e tire a dúvida antes de agendar.</p>
+          <div class="contact-actions">
+            <a class="btn btn-ink btn-sm" href="https://tintim.link/whatsapp/7c349cb9-c7e6-42a9-8469-b6271b6bdefa/bfc37a4d-e9c0-4161-89c0-4ad689308140" target="_blank" rel="noopener">Falar no WhatsApp <span class="dot"><svg><use href="#i-arrow"/></svg></span></a>
+            <a class="btn-text" href="tel:08001001989"><svg class="i"><use href="#i-phone"/></svg>0800 100 1989</a>
+          </div>
+        </div>
+      </div>
+      <div class="faq-right">
+        <div class="faq-tabs" role="tablist" aria-label="Assuntos">
+          <button class="f-tab" type="button" role="tab" id="ft-1" aria-controls="fp-1" aria-selected="true">Avaliação</button>
+          <button class="f-tab" type="button" role="tab" id="ft-2" aria-controls="fp-2" aria-selected="false" tabindex="-1">Aparelhos</button>
+          <button class="f-tab" type="button" role="tab" id="ft-3" aria-controls="fp-3" aria-selected="false" tabindex="-1">Depois da compra</button>
+        </div>
+        <div role="tabpanel" id="fp-1" aria-labelledby="ft-1">
+          <details class="qa" open><summary>Como saber se preciso de aparelho auditivo?<i><svg><use href="#i-plus"/></svg></i></summary><p>Pedir para repetir, aumentar o volume da TV e ter dificuldade em lugares com barulho são sinais comuns. Só a avaliação com fonoaudiólogo confirma.</p></details>
+          <details class="qa"><summary>Como funciona a avaliação?<i><svg><use href="#i-plus"/></svg></i></summary><p>O fonoaudiólogo faz os exames de audição, entende sua rotina e mostra as opções de aparelho que fazem sentido para você.</p></details>
+          <details class="qa"><summary>O teste online substitui o exame?<i><svg><use href="#i-plus"/></svg></i></summary><p>Não. Ele dá uma orientação inicial e ajuda a saber se é hora de marcar a avaliação.</p></details>
+        </div>
+        <div role="tabpanel" id="fp-2" aria-labelledby="ft-2" hidden>
+          <details class="qa" open><summary>Posso testar o aparelho antes de comprar?<i><svg><use href="#i-plus"/></svg></i></summary><p>Sim. Depois da avaliação, você experimenta o modelo indicado na sua rotina. As condições são explicadas na unidade.</p></details>
+          <details class="qa"><summary>Quanto custa um aparelho auditivo?<i><svg><use href="#i-plus"/></svg></i></summary><p>Depende do formato, da tecnologia e do seu tipo de perda. Depois da avaliação você recebe um orçamento personalizado.</p></details>
+          <details class="qa"><summary>Quais marcas a Opimed trabalha?<i><svg><use href="#i-plus"/></svg></i></summary><p>Widex, Signia e ReSound. Nossa equipe é treinada e certificada por cada uma delas.</p></details>
+        </div>
+        <div role="tabpanel" id="fp-3" aria-labelledby="ft-3" hidden>
+          <details class="qa" open><summary>Vocês fazem manutenção?<i><svg><use href="#i-plus"/></svg></i></summary><p>Sim. Temos laboratório e assistência técnica próprios para limpeza, ajustes e reparos.</p></details>
+          <details class="qa"><summary>O que é a Troca Inteligente?<i><svg><use href="#i-plus"/></svg></i></summary><p>São condições para trocar o seu aparelho por um modelo mais novo. Consulte na unidade mais próxima.</p></details>
+          <details class="qa"><summary>Como funciona a garantia?<i><svg><use href="#i-plus"/></svg></i></summary><p>A Garantia Premium chega a 5 anos, conforme o modelo escolhido.</p></details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENDAR -->
+  <section class="book sec" id="agendar" aria-labelledby="book-title">
+    <div class="wrap book-grid">
+      <div class="book-left">
+        <span class="eyebrow" style="background:#fff">Agendar</span>
+        <h2 class="h2" id="book-title"><span class="hl">Agende sua avaliação.</span> A equipe da unidade fala com você pelo WhatsApp.</h2>
+        <p>Escolha a unidade mais perto e deixe seu contato. Se preferir, ligue para o 0800.</p>
+        <div class="actions">
+          <a class="btn btn-ink" href="#lead-form">Preencher o formulário <span class="dot"><svg><use href="#i-arrow"/></svg></span></a>
+          <a class="btn btn-white" href="tel:08001001989">Ligar 0800 100 1989 <span class="dot"><svg><use href="#i-phone"/></svg></span></a>
+        </div>
+        <p class="fine"><svg><use href="#i-info"/></svg>O teste online não substitui a avaliação com fonoaudiólogo.</p>
+      </div>
+      <div class="appt">
+        <div class="appt-side">
+          <i><svg class="i"><use href="#i-cal"/></svg></i>
+          <div><small>Sua avaliação</small><b>Com fonoaudiólogo</b></div>
+          <div class="code"><small>Unidades</small><b>18 no Brasil</b></div>
+        </div>
+        <form class="form" id="lead-form" novalidate>
+          <span class="cap">Pedido de agendamento</span>
+          <div class="field"><label for="f-nome">Nome</label><input id="f-nome" name="nome" autocomplete="name" placeholder="Seu nome" required></div>
+          <div class="field"><label for="f-tel">WhatsApp</label><input id="f-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="(62) 99999-9999" required></div>
+          <div class="field"><label for="f-uni">Unidade</label><select id="f-uni" name="unidade" required><option value="">Selecione</option></select></div>
+          <button class="btn btn-ink" type="submit">Quero ser chamado <span class="dot"><svg><use href="#i-arrow"/></svg></span></button>
+          <p class="legal">Ao enviar, você concorda com a Política de Privacidade da Opimed.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <img src="img/logo-opimed.png" alt="Opimed, desde 1989" width="88" height="44">
+        <p>Aparelhos auditivos e acompanhamento desde 1989. 18 unidades em 8 estados e no DF.</p>
+      </div>
+      <a class="btn btn-white" href="#agendar">Agendar avaliação <span class="dot"><svg><use href="#i-arrow"/></svg></span></a>
+    </div>
+    <div class="foot-grid">
+      <div class="foot-col"><h4>Contato</h4><ul>
+        <li><svg><use href="#i-phone"/></svg><a href="tel:08001001989">0800 100 1989</a></li>
+        <li><svg><use href="#i-wa"/></svg><a href="https://tintim.link/whatsapp/7c349cb9-c7e6-42a9-8469-b6271b6bdefa/bfc37a4d-e9c0-4161-89c0-4ad689308140" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li><svg><use href="#i-ig"/></svg><a href="https://www.instagram.com/opimed.aparelhosauditivos" target="_blank" rel="noopener">Instagram</a></li>
+        <li><svg><use href="#i-fb"/></svg><a href="https://www.facebook.com/opimed/" target="_blank" rel="noopener">Facebook</a></li>
+      </ul></div>
+      <div class="foot-col"><h4>Aparelhos</h4><ul><li><a href="#tipos">Receptor no canal</a></li><li><a href="#tipos">Microcanal</a></li><li><a href="#tipos">Intracanal</a></li><li><a href="#tipos">Retroauricular</a></li><li><a href="#modelos">Todos os modelos</a></li></ul></div>
+      <div class="foot-col"><h4>Marcas</h4><ul><li><a href="#marcas">Widex</a></li><li><a href="#marcas">Signia</a></li><li><a href="#marcas">ReSound</a></li></ul></div>
+      <div class="foot-col"><h4>Opimed</h4><ul><li><a href="#acompanhamento">Sobre nós</a></li><li><a href="#unidades">Unidades</a></li><li><a href="#topo">Blog</a></li><li><a href="https://opimed.vagas.solides.com.br/" target="_blank" rel="noopener">Trabalhe conosco</a></li><li><a href="https://solucoescirurgicas.com.br/" target="_blank" rel="noopener">Soluções Cirúrgicas</a></li></ul></div>
+      <div class="foot-col"><h4>Atendimento</h4><ul><li><a href="#agendar">Agendar avaliação</a></li><li><a href="#formas">Teste online</a></li><li><a href="#acompanhamento">Manutenção</a></li><li><a href="#duvidas">Dúvidas frequentes</a></li></ul></div>
+    </div>
+    <div class="foot-note">
+      <span><svg><use href="#i-info"/></svg>O teste online não substitui a avaliação com fonoaudiólogo.</span>
+      <span>Opimed do Brasil Ltda · CNPJ 01.191.654/0001-02</span>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Opimed. Protótipo de nova home · 3ADS · Nov/2026</span>
+      <nav aria-label="Links legais"><a href="https://opimed.com.br/politica-de-privacidade/" target="_blank" rel="noopener">Política de privacidade</a><a href="#duvidas">Fale conosco</a></nav>
+    </div>
+  </div>
+</footer>
+
+<a class="whats" href="https://tintim.link/whatsapp/7c349cb9-c7e6-42a9-8469-b6271b6bdefa/bfc37a4d-e9c0-4161-89c0-4ad689308140" target="_blank" rel="noopener" aria-label="Falar com a Opimed no WhatsApp">
+  <svg><use href="#i-wa"/></svg><span>Fale no WhatsApp</span>
+</a>
+
+<script>
+(function(){
+  var UNITS=[
+    {uf:"GO",city:"Goiânia",area:"Setor Marista",addr:"Av. Mutirão, 2653, St. Marista, térreo do Órion Business & Health Complex",tel:"(62) 3996-7789"},
+    {uf:"GO",city:"Goiânia",area:"Setor Oeste",addr:"Av. República do Líbano, 1775, St. Oeste (em frente ao INGOH)",tel:"(62) 3996-7700"},
+    {uf:"GO",city:"Anápolis",area:"Setor Central",addr:"Av. Desembargador Jaime, nº 73, St. Central (em frente à Igreja Sant'Ana)",tel:"(62) 3943-0110"},
+    {uf:"GO",city:"Catalão",area:"Centro",addr:"Av. Farid Miguel Safatle, nº 18, sala 01, Centro",tel:"(64) 3441-2105"},
+    {uf:"GO",city:"Itumbiara",area:"Centro",addr:"Rua Rui de Almeida, nº 582, Centro",tel:"(64) 3404-5976"},
+    {uf:"GO",city:"Rio Verde",area:"Centro",addr:"Rua Pedro Rattes, nº 99, Centro (próximo à Praça dos Coqueiros)",tel:"(64) 3621-7062"},
+    {uf:"DF",city:"Brasília",area:"Asa Sul",addr:"Edifício Via Brasil, SEPS 710/910, Asa Sul",tel:"(61) 3028-7474"},
+    {uf:"DF",city:"Brasília",area:"Asa Norte",addr:"SMHN Qd. 2, Bl. C, Lj. 09/10, Ed. Dr. Crispim (em frente ao HRAN)",tel:"(61) 3548-8006"},
+    {uf:"DF",city:"Águas Claras",area:"Pátio Capital",addr:"Edifício Pátio Capital, Sala 24, Térreo, QS 03",tel:"(61) 3550-7326"},
+    {uf:"TO",city:"Palmas",area:"Plano Diretor Sul",addr:"Av. Teotônio Segurado, 501 Sul, Conj. 01, Lt. 22, Loja 03",tel:"(63) 3215-4088"},
+    {uf:"TO",city:"Araguaína",area:"Centro",addr:"Av. Tocantins, nº 1650, Ed. João Coragem, Centro",tel:"(63) 3413-1130"},
+    {uf:"PE",city:"Recife",area:"Ilha do Leite",addr:"Rua Minas Gerais, 116, Ilha do Leite",tel:"(81) 3771-0062"},
+    {uf:"PE",city:"Recife",area:"Boa Viagem",addr:"Galeria Centro Sul, Rua Jornalista Adeth Leite, 009, Boa Viagem",tel:"0800 100 1989"},
+    {uf:"PA",city:"Belém",area:"Umarizal",addr:"Tv. Dom Romualdo de Seixas, nº 1560, Ed. Connext, Loja 10, Umarizal",tel:"(91) 3249-7174"},
+    {uf:"AM",city:"Manaus",area:"Chapada",addr:"Av. Djalma Batista, nº 1718, Atlantic Tower, sala 802, Chapada",tel:"(92) 3584-4099"},
+    {uf:"AP",city:"Macapá",area:"Setor Central",addr:"Av. Fab, 1833, Loja A, Setor Central (ao lado da Clínica Promed)",tel:"(96) 3082-2110"},
+    {uf:"CE",city:"Fortaleza",area:"Aldeota",addr:"Av. Senador Virgílio Távora, 1837, Loja B, Aldeota",tel:"(85) 4012-3305"},
+    {uf:"RO",city:"Porto Velho",area:"Olaria",addr:"Rua Tenreiro Aranha, nº 3108, sala 01 B, Olaria",tel:"(69) 3224-1386"}
+  ];
+  var UF_NAME={GO:"Goiás",DF:"Distrito Federal",TO:"Tocantins",PE:"Pernambuco",PA:"Pará",AM:"Amazonas",AP:"Amapá",CE:"Ceará",RO:"Rondônia"};
+  var order=["GO","DF","TO","PE","PA","AM","AP","CE","RO"];
+  var grid=document.getElementById("units"), filters=document.getElementById("filters"), moreBtn=document.getElementById("more-units");
+  var current="all", expanded=false, LIMIT=6;
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+  function label(u){return u.city+" · "+u.area}
+  function render(){
+    var list=UNITS.filter(function(u){return current==="all"||u.uf===current});
+    var shown=(current==="all"&&!expanded)?list.slice(0,LIMIT):list;
+    grid.innerHTML=shown.map(function(u){
+      var q=encodeURIComponent("Opimed "+u.addr+" "+u.city);
+      var t=u.tel.replace(/\D/g,"");
+      return '<article class="clinic"><div class="clinic-top"><i><img src="img/favicon.svg" alt=""></i><small>Opimed '+esc(UF_NAME[u.uf])+'</small><b>'+esc(label(u))+'</b></div>'+
+        '<div class="clinic-body"><ul><li><svg><use href="#i-pin"/></svg><span>'+esc(u.addr)+'</span></li><li><svg><use href="#i-phone"/></svg><span>'+esc(u.tel)+'</span></li></ul>'+
+        '<div class="chips"><span class="chip">Avaliação</span><span class="chip">Adaptação</span><span class="chip">Manutenção</span></div>'+
+        '<div class="clinic-actions"><a class="btn btn-ink btn-sm" href="#agendar" data-unit="'+esc(label(u))+'">Agendar aqui <span class="dot"><svg><use href="#i-arrow"/></svg></span></a>'+
+        '<a class="btn-text" href="https://www.google.com/maps/search/?api=1&query='+q+'" target="_blank" rel="noopener">Como chegar</a></div></div></article>';
+    }).join("");
+    moreBtn.parentNode.hidden=!(current==="all"&&!expanded&&list.length>LIMIT);
+    [].forEach.call(filters.children,function(b){b.setAttribute("aria-pressed",String(b.dataset.uf===current))});
+  }
+  var html='<button class="filter" type="button" data-uf="all" aria-pressed="true">Todas <small>'+UNITS.length+'</small></button>';
+  order.forEach(function(uf){var n=UNITS.filter(function(u){return u.uf===uf}).length;html+='<button class="filter" type="button" data-uf="'+uf+'" aria-pressed="false">'+UF_NAME[uf]+' <small>'+n+'</small></button>'});
+  filters.innerHTML=html;
+  filters.addEventListener("click",function(e){var b=e.target.closest(".filter");if(b){current=b.dataset.uf;render()}});
+  moreBtn.addEventListener("click",function(){expanded=true;render()});
+  render();
+
+  // select de unidades
+  var sel=document.getElementById("f-uni");
+  order.forEach(function(uf){
+    var g=document.createElement("optgroup");g.label=UF_NAME[uf];
+    UNITS.filter(function(u){return u.uf===uf}).forEach(function(u){var o=document.createElement("option");o.value=label(u);o.textContent=label(u);g.appendChild(o)});
+    sel.appendChild(g);
+  });
+  grid.addEventListener("click",function(e){var a=e.target.closest("[data-unit]");if(a)sel.value=a.dataset.unit});
+
+  // abas genéricas (tipos e dúvidas)
+  function tabs(selector){
+    var list=[].slice.call(document.querySelectorAll(selector));
+    function pick(tab,focus){
+      list.forEach(function(t){var on=t===tab;t.setAttribute("aria-selected",String(on));t.tabIndex=on?0:-1;document.getElementById(t.getAttribute("aria-controls")).hidden=!on});
+      if(focus)tab.focus();
+    }
+    list.forEach(function(t,i){
+      t.addEventListener("click",function(){pick(t)});
+      t.addEventListener("keydown",function(e){var d={ArrowRight:1,ArrowDown:1,ArrowLeft:-1,ArrowUp:-1}[e.key];if(d){e.preventDefault();pick(list[(i+d+list.length)%list.length],true)}});
+    });
+  }
+  tabs(".t-tab"); tabs(".f-tab");
+
+  // carrossel de marcas
+  var car=document.getElementById("brand-car"), prev=document.querySelector(".car-btn.prev"), next=document.querySelector(".car-btn.next"), cards=[].slice.call(car.children);
+  function step(){return cards[1]?cards[1].offsetLeft-cards[0].offsetLeft:car.clientWidth}
+  function update(){var max=car.scrollWidth-car.clientWidth-2;prev.disabled=car.scrollLeft<=2;next.disabled=car.scrollLeft>=max}
+  prev.addEventListener("click",function(){car.scrollBy({left:-step(),behavior:"smooth"})});
+  next.addEventListener("click",function(){car.scrollBy({left:step(),behavior:"smooth"})});
+  car.addEventListener("scroll",function(){requestAnimationFrame(update)},{passive:true});
+  window.addEventListener("resize",update);update();
+
+  // header + menu
+  var header=document.querySelector(".header"), menuBtn=document.querySelector(".menu-btn");
+  function onScroll(){header.classList.toggle("scrolled",window.scrollY>40)}
+  window.addEventListener("scroll",onScroll,{passive:true});onScroll();
+  function setMenu(open){document.body.classList.toggle("menu-open",open);menuBtn.setAttribute("aria-expanded",String(open));menuBtn.setAttribute("aria-label",open?"Fechar menu":"Abrir menu")}
+  menuBtn.addEventListener("click",function(){setMenu(!document.body.classList.contains("menu-open"))});
+  document.querySelectorAll(".drawer a").forEach(function(a){a.addEventListener("click",function(){setMenu(false)})});
+
+  // máscara de telefone
+  var tel=document.getElementById("f-tel");
+  tel.addEventListener("input",function(){
+    var d=tel.value.replace(/\D/g,"").slice(0,11),o="";
+    if(d.length>0)o="("+d.slice(0,2);
+    if(d.length>=3)o+=") "+d.slice(2,d.length>10?7:6);
+    if(d.length>=7)o+="-"+d.slice(d.length>10?7:6);
+    tel.value=o;
+  });
+
+  // formulário (protótipo: não envia)
+  var form=document.getElementById("lead-form");
+  form.addEventListener("submit",function(e){
+    e.preventDefault();
+    var ok=true;
+    ["f-nome","f-tel","f-uni"].forEach(function(id){
+      var el=document.getElementById(id), bad=!el.value.trim()||(id==="f-tel"&&el.value.replace(/\D/g,"").length<10);
+      el.setAttribute("aria-invalid",String(bad)); if(bad&&ok){el.focus();ok=false}
+    });
+    if(!ok)return;
+    var nome=document.getElementById("f-nome").value.trim().split(" ")[0];
+    form.innerHTML='<div class="form-ok"><i><svg class="i"><use href="#i-check"/></svg></i><h3 class="h3">Pronto, '+esc(nome)+'!</h3><p>A equipe da unidade '+esc(sel.value)+' vai falar com você pelo WhatsApp.</p><p class="legal">Protótipo: nenhum dado foi enviado.</p></div>';
+  });
+})();
+</script>
+</body>
+</html>
