@@ -312,6 +312,7 @@ svg.i{width:18px;height:18px;flex:none}
 .fine svg{width:15px;height:15px}
 .appt{display:grid;grid-template-columns:200px minmax(0,1fr);border-radius:var(--r-lg);overflow:hidden;background:#fff;box-shadow:0 24px 50px -30px rgba(37,32,33,.45)}
 .appt-side{background:var(--night);color:#fff;padding:24px;display:grid;align-content:space-between;gap:24px}
+.appt-top{display:grid;gap:20px;align-content:start}
 .appt-side i{width:40px;height:40px;border-radius:var(--r-sm);border:1px solid var(--line-night);display:grid;place-items:center}
 .appt-side small{display:block;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--on-night-3);margin-bottom:4px}
 .appt-side b{font-family:var(--f-display);font-weight:500;font-size:1.1rem}
@@ -410,7 +411,7 @@ svg.i{width:18px;height:18px;flex:none}
   .clinics{grid-template-columns:minmax(0,1fr)}
   .tiles,.two,.helper-steps{grid-template-columns:minmax(0,1fr)}
   .appt{grid-template-columns:minmax(0,1fr)}
-  .appt-side{grid-template-columns:auto 1fr;align-items:center}
+  .appt-top{grid-template-columns:auto 1fr;align-items:center;gap:14px}
   .appt-side .code{display:none}
   .qa p{padding-right:0}
   .foot-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -838,8 +839,10 @@ svg.i{width:18px;height:18px;flex:none}
       </div>
       <div class="appt">
         <div class="appt-side">
-          <i><svg class="i"><use href="#i-cal"/></svg></i>
-          <div><small>Sua avaliação</small><b>Com fonoaudiólogo</b></div>
+          <div class="appt-top">
+            <i><svg class="i"><use href="#i-cal"/></svg></i>
+            <div><small>Sua avaliação</small><b>Com fonoaudiólogo</b></div>
+          </div>
           <div class="code"><small>Unidades</small><b>18 no Brasil</b></div>
         </div>
         <form class="form" id="lead-form" novalidate>
